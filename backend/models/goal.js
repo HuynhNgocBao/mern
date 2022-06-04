@@ -3,6 +3,11 @@ const Schema = mongoose.Schema;
 
 const goalSchema = new Schema(
   {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
     text: { type: String, required: true },
   },
   {
@@ -10,4 +15,4 @@ const goalSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model('Goal',goalSchema);
+module.exports = mongoose.model("Goal", goalSchema);
